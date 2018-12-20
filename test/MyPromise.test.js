@@ -1,11 +1,11 @@
 import { MyPromise } from "../src/MyPromise";
 
 describe("MyPromise", () => {
-  test("should throw Error", async () => {
+  test("should throw Error", () => {
     const expected = "Error";
 
     const promise$ = new MyPromise([]);
-    (await expect(promise$).rejects).toThrow(expected);
+    expect(promise$).rejects.toThrow(expected);
   });
 
   test("has catch", () => {

@@ -1,10 +1,10 @@
 import { evaluate } from "../src/utils";
 
 describe("Promise", () => {
-  test("should throw Error", async () => {
+  test("should throw Error", () => {
     const expected = "Error";
     const promise$ = new Promise(evaluate);
-    await expect(promise$).rejects.toThrow(expected);
+    expect(promise$).rejects.toThrow(expected);
   });
 
   test("has catch", () => {
