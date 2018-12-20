@@ -5,7 +5,7 @@ describe("MyPromise", () => {
     const expected = "Error";
 
     const promise$ = new MyPromise([]);
-    await expect(promise$).rejects.toThrow(expected);
+    (await expect(promise$).rejects).toThrow(expected);
   });
 
   test("has catch", () => {

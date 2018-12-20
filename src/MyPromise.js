@@ -8,10 +8,10 @@ export class MyPromise {
   }
 
   then(callback) {
-    this.promise.then(() => callback(this.data, "My Message"));
+    return this.promise.then(() => callback(this.data, "My Message"));
   }
 
   catch(callback) {
-    this.promise.catch(callback);
+    return this.promise.catch(callback);
   }
 }
