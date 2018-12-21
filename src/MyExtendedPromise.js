@@ -2,7 +2,7 @@ import { ADDITIONAL_DATA, evaluate } from "./utils";
 
 export class MyExtendedPromise extends Promise {
     
-  constructor(executor = evaluate, data) {
+  constructor(executor, data) {
     super(executor);
     this.data = data;
     this.rules = [];
@@ -13,6 +13,6 @@ export class MyExtendedPromise extends Promise {
   }
 
   then(callback) {
-    super.then(() => callback(this.data, ADDITIONAL_DATA));
+    return super.then(() => callback(this.data, ADDITIONAL_DATA));
   }
 }
