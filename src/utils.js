@@ -1,9 +1,13 @@
+export const ADDITIONAL_DATA = "My Additional Data";
+export const ERROR_MESSAGE = "Error";
+
 export function evaluate(resolve, reject) {
-  function getPromise() {
-    return Promise.reject(new Error("Error"));
+  const data = this;
+  function getPromise(data) {
+    return !!data ? Promise.resolve(data) : Promise.reject(new Error("Error"));
   }
 
-  getPromise()
+  getPromise(data)
     .then(resolve)
     .catch(reject);
 }
